@@ -1,0 +1,56 @@
+.fragMovies {
+  background: var(--bg-warm);
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-family: var(--font-mono);
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  color: var(--text-muted);
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.videoWrap {
+  position: relative;
+}
+
+/* Orange accent line above each video */
+.videoWrap::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--orange);
+  opacity: 0.5;
+  margin-bottom: 0.75rem;
+}
+
+/* lite-youtube overrides */
+.videoWrap :global(lite-youtube) {
+  outline: 1px solid var(--rule);
+  max-width: 100%;
+  border-radius: 0;
+}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import styles from './Projects.module.css'
 
 const PROJECTS = [
-  { url: 'gn1ght.com', label: 'GN1GHT', domain: 'gn1ght.com', desc: 'Group-based Eurovision rating app. Score songs, assign points, compare results - built for the annual argument with your friends.' },
+  { url: 'gn1ght.com', label: 'GN1GHT', domain: 'gn1ght.com', desc: 'Group-based Eurovision rating app. Score songs, assign points, compare results - built for the annual argument with your friends. Powered by Laravel and Filament.' },
   { url: 'kopf-kino.eu', label: 'KOPF-KINO', domain: 'kopf-kino.eu', desc: 'A website for storyteller Sabine Heinrich - showcasing her programmes, vita, and upcoming events. Built with Laravel, content-managed through a custom admin panel.' },
   { url: 'drunksweeper.com', label: 'DRUNKSWEEPER', domain: 'drunksweeper.com', desc: 'Minesweeper meets drinking game - a card-based browser game where mines, warnings, and bluff cards are dealt across a 5×4 grid. Built with React and TypeScript, fully playable in the browser.' },
 ]
@@ -65,7 +65,7 @@ export default function Projects() {
   const ref = useRef<HTMLElement>(null)
 
   return (
-    <section ref={ref} className={styles.projects}>
+    <section ref={ref} id="projects" className={styles.projects}>
       <div className="section-inner">
         <motion.p
           className={styles.sectionLabel}
@@ -74,7 +74,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          Projects
+          Web Projects
         </motion.p>
 
         <div className={styles.list}>
