@@ -1,0 +1,146 @@
+.bio {
+  background: var(--bg-warm);
+  padding-bottom: clamp(5rem, 12vw, 10rem);
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+}
+
+/* Identity */
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bioName {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+
+.bioDegree {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: 0.75rem;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.bioText {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  color: var(--text-muted);
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+.highlight {
+  color: var(--text);
+  font-style: italic;
+}
+
+/* Social Links */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+  width: fit-content;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.link svg {
+  flex-shrink: 0;
+  transition: color 0.25s;
+}
+
+.link:hover svg {
+  color: var(--orange);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 1rem;
+}
+
+.footerText {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.footerDot {
+  color: var(--orange);
+  opacity: 0.4;
+}
