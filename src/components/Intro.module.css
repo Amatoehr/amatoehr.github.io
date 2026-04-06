@@ -123,6 +123,7 @@
   font-size: clamp(0.8rem, 1.8vw, 1rem);
   color: var(--text-muted);
   pointer-events: auto;
+  padding-left: clamp(1.5rem, 6vw, 5rem);
 }
 
 .degree {
@@ -141,15 +142,38 @@
 
 /* ─── Side Nav ──────────────────────────────────────────────── */
 .sideNav {
-  position: absolute;
-  right: var(--pad-x);
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 0.6rem;
+  gap: 0.55rem;
   z-index: 3;
+}
+
+/* Mobile: in-flow, under the name */
+.sideNavMobile {
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+@media (min-width: 600px) {
+  .sideNavMobile {
+    display: none;
+  }
+}
+
+/* Desktop: absolute, right-center of section */
+.sideNavDesktop {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .sideNavDesktop {
+    display: flex;
+    position: absolute;
+    right: var(--pad-x);
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: flex-end;
+  }
 }
 
 .sideNavLink {
@@ -161,6 +185,7 @@
   text-decoration: none;
   transition: color 0.2s ease, text-shadow 0.2s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .sideNavLink:hover {

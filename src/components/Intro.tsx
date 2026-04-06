@@ -54,25 +54,37 @@ export default function Intro() {
             aria-hidden
           />
         </div>
-      </motion.div>
 
-      {/* Subtitle on separate parallax layer */}
-      <motion.div className={`section-inner ${styles.subtitleOuter}`} style={{ y: subtitleY }}>
-        <motion.div
-          className={styles.subtitle}
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        {/* Nav: in-flow under name (mobile), hidden on desktop */}
+        <motion.nav
+          className={`${styles.sideNav} ${styles.sideNavMobile}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.7 }}
+          aria-label="Page sections"
         >
-          <span className={styles.degree}>Socio-Informatics (B.Sc)</span>
-          <span className={styles.sep}>—</span>
-          <span className={styles.desc}>Build. Learn. Ship.</span>
-        </motion.div>
+          {NAV_ITEMS.map((item, i) => (
+            <motion.a
+              key={item.href}
+              href={item.href}
+              className={styles.sideNavLink}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0 + i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              onClick={(e) => {
+                e.preventDefault()
+                document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              {item.label}
+            </motion.a>
+          ))}
+        </motion.nav>
       </motion.div>
 
-      {/* Vertical nav — right side */}
+      {/* Nav: absolute right-center on desktop, hidden on mobile */}
       <motion.nav
-        className={styles.sideNav}
+        className={`${styles.sideNav} ${styles.sideNavDesktop}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.7 }}
@@ -95,6 +107,20 @@ export default function Intro() {
           </motion.a>
         ))}
       </motion.nav>
+
+      {/* Subtitle on separate parallax layer */}
+      <motion.div className={`section-inner ${styles.subtitleOuter}`} style={{ y: subtitleY }}>
+        <motion.div
+          className={styles.subtitle}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className={styles.degree}>Socio-Informatics (B.Sc)</span>
+          <span className={styles.sep}>—</span>
+          <span className={styles.desc}>Build. Learn. Ship.</span>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
