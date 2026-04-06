@@ -39,7 +39,7 @@ export default function Bio() {
           <FadeUp delay={0.1}>
             <div className={styles.identity}>
               <h2 className={styles.bioName}>Florian<br />Heinrich</h2>
-              <p className={styles.bioDegree}>Socio-informatics (B.Sc)</p>
+              <p className={styles.bioDegree}>Socio-Informatics (B.Sc)</p>
             </div>
           </FadeUp>
 

@@ -61,7 +61,7 @@ export default function Intro() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className={styles.degree}>Socio-informatics (B.Sc)</span>
+          <span className={styles.degree}>Socio-Informatics (B.Sc)</span>
           <span className={styles.sep}>—</span>
           <span className={styles.desc}>Build. Learn. Ship.</span>
         </motion.div>
